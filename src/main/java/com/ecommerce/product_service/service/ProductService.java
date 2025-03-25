@@ -9,5 +9,6 @@ public interface ProductService {
     Product createProduct(Product product);
     Product getProduct(Long id);
     List<Product> getAllProducts();
+    Product reduceQuantity(Long id, int quantity);
 
 }

@@ -25,7 +25,6 @@ public class ProductController {
         return welcomeMessage;
     }
 
-
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Product createProduct(@RequestBody Product product) {
@@ -46,6 +45,11 @@ public class ProductController {
 
         return productService.getAllProducts();
 
+    }
+
+    @PutMapping("/{id}/reduceQuantity/{quantity}")
+    public Product reduceProductQuantity(@PathVariable Long id, @PathVariable int quantity) {
+        return productService.reduceQuantity(id, quantity);
     }
 
 }
