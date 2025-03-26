@@ -25,6 +25,11 @@ public class ProductController {
         return welcomeMessage;
     }
 
+    @GetMapping("/public/ping")
+    public String ping() {
+        return "pong";
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Product createProduct(@RequestBody Product product) {
